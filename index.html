@@ -79,10 +79,7 @@
       transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -116,11 +113,7 @@
       margin-right: 0.75rem;
       transition: color var(--transition);
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.125rem;
-    }
+    .nav-links { display: flex; align-items: center; gap: 0.125rem; }
     .nav-link {
       font-size: 0.82rem;
       font-weight: 400;
@@ -153,9 +146,7 @@
       .nav-link { font-size: 0.75rem; padding: 0.25rem 0.5rem; }
       .nav-sep { display: none; }
     }
-    @media (max-width: 480px) {
-      .nav-link-extra { display: none; }
-    }
+    @media (max-width: 480px) { .nav-link-extra { display: none; } }
 
     /* ── Hero ────────────────────────────────────────────────────────── */
     .hero {
@@ -163,25 +154,23 @@
       display: flex;
       align-items: center;
       padding: 7rem 0 5rem;
-      position: relative;
     }
-    .hero-inner {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
+    .hero-inner { display: flex; align-items: center; gap: 3rem; }
     .hero-avatar {
-      width: 150px;
-      height: 150px;
+      width: 150px; height: 150px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent-bg) 0%, var(--surface-2) 100%);
       border: 3px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .hero-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
     .hero-avatar-initials {
       font-family: 'Crimson Pro', serif;
@@ -208,24 +197,9 @@
       color: var(--text);
       margin-bottom: 1rem;
     }
-    .hero-title {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-      max-width: 540px;
-    }
-    .hero-summary {
-      font-size: 1rem;
-      color: var(--text);
-      max-width: 560px;
-      line-height: 1.75;
-      margin-bottom: 1.75rem;
-    }
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.625rem;
-    }
+    .hero-title { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.25rem; max-width: 540px; }
+    .hero-summary { font-size: 1rem; color: var(--text); max-width: 560px; line-height: 1.75; margin-bottom: 1.75rem; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.625rem; }
     .hero-link {
       display: inline-flex;
       align-items: center;
@@ -237,17 +211,12 @@
       transition: all var(--transition);
       cursor: pointer;
     }
-    .hero-link-primary {
-      background: var(--accent);
-      color: #fff;
-    }
+    .hero-link-primary { background: var(--accent); color: #fff; }
     .hero-link-primary:hover { background: var(--accent-hover); color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .hero-link-secondary {
-      background: var(--surface-2);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
+    .hero-link-secondary { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
     .hero-link-secondary:hover { background: var(--surface); color: var(--text); transform: translateY(-1px); box-shadow: var(--shadow); }
+    .hero-link-cv { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+    .hero-link-cv:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-1px); box-shadow: var(--shadow-md); }
     @media (max-width: 600px) {
       .hero-inner { flex-direction: column; gap: 2rem; text-align: center; }
       .hero-avatar { width: 120px; height: 120px; margin: 0 auto; }
@@ -273,12 +242,7 @@
       color: var(--text);
       line-height: 1.2;
     }
-    .section-desc {
-      margin-top: 0.625rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 560px;
-    }
+    .section-desc { margin-top: 0.625rem; color: var(--muted); font-size: 0.95rem; max-width: 560px; }
 
     /* ── Divider ─────────────────────────────────────────────────────── */
     .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
@@ -295,16 +259,27 @@
       border-radius: var(--radius-lg);
       padding: 1.5rem;
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      cursor: default;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 0.875rem;
+      position: relative;
     }
-    .research-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--accent);
+    .research-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+    .research-card-hint {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      opacity: 0;
+      transition: opacity var(--transition);
     }
+    .research-card:hover .research-card-hint { opacity: 1; }
     .research-card-top { display: flex; align-items: flex-start; gap: 0.875rem; }
     .research-icon {
       width: 40px; height: 40px;
@@ -320,12 +295,9 @@
       font-weight: 600;
       color: var(--text);
       line-height: 1.3;
+      padding-right: 3rem;
     }
-    .research-card-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
+    .research-card-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
     .research-card-impact {
       font-size: 0.85rem;
       font-weight: 700;
@@ -349,9 +321,7 @@
       border: 1px solid var(--border);
       letter-spacing: 0.02em;
     }
-    @media (max-width: 560px) {
-      .research-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 560px) { .research-grid { grid-template-columns: 1fr; } }
 
     /* ── Projects ────────────────────────────────────────────────────── */
     .projects-grid {
@@ -359,6 +329,16 @@
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.25rem;
     }
+    .project-card-link {
+      display: block;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: inherit;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .project-card-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); color: inherit; }
+    .project-card-link:hover .project-card { border-color: var(--accent); }
+    .project-card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-lg); }
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -367,9 +347,9 @@
       display: flex;
       flex-direction: column;
       gap: 0.875rem;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      height: 100%;
+      transition: border-color var(--transition);
     }
-    .project-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
     .project-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
     .project-card-name {
       font-family: 'Crimson Pro', serif;
@@ -400,7 +380,7 @@
       padding-left: 0.75rem;
       border-left: 2px solid var(--accent);
     }
-    .project-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
+    .project-card-footer { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
     .github-link {
       display: inline-flex;
       align-items: center;
@@ -413,10 +393,8 @@
       border-radius: 999px;
       transition: all var(--transition);
     }
-    .github-link:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent-hover); }
-    @media (max-width: 560px) {
-      .projects-grid { grid-template-columns: 1fr; }
-    }
+    .project-card-link:hover .github-link { background: var(--accent-bg); border-color: var(--accent); }
+    @media (max-width: 560px) { .projects-grid { grid-template-columns: 1fr; } }
 
     /* ── Publications ─────────────────────────────────────────────────── */
     .pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
@@ -448,11 +426,7 @@
       line-height: 1.4;
       margin-bottom: 0.35rem;
     }
-    .pub-venue {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
+    .pub-venue { font-size: 0.875rem; color: var(--muted); margin-bottom: 0.5rem; }
     .pub-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
     .pub-tag-conference { background: var(--accent-bg); color: var(--accent); }
     .pub-tag-journal    { background: #F0FDF4; color: #166534; }
@@ -462,33 +436,76 @@
     .pub-authors { font-size: 0.82rem; color: var(--muted); font-style: italic; }
     .pub-authors strong { color: var(--text); font-style: normal; }
 
+    /* ── News / Blog ─────────────────────────────────────────────────── */
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.125rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .news-date {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      white-space: nowrap;
+      min-width: 80px;
+      padding-top: 0.15rem;
+    }
+    .news-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.55rem;
+    }
+    .news-body { flex: 1; }
+    .news-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+      line-height: 1.4;
+    }
+    .news-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .news-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .badge-conference { background: var(--accent-bg); color: var(--accent); }
+    .badge-paper      { background: #F0FDF4; color: #166534; }
+    .badge-award      { background: #FFF7ED; color: #9A3412; }
+    .badge-project    { background: #F5F3FF; color: #6D28D9; }
+    [data-theme="dark"] .badge-paper    { background: #14532D; color: #86EFAC; }
+    [data-theme="dark"] .badge-award    { background: #431407; color: #FED7AA; }
+    [data-theme="dark"] .badge-project  { background: #2E1065; color: #C4B5FD; }
+
     /* ── Education ───────────────────────────────────────────────────── */
     .edu-timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
     .edu-timeline::before {
       content: '';
       position: absolute;
-      left: 22px;
-      top: 0; bottom: 0;
+      left: 22px; top: 0; bottom: 0;
       width: 1px;
       background: var(--border);
     }
-    .edu-item {
-      display: flex;
-      gap: 1.5rem;
-      padding-bottom: 2rem;
-      position: relative;
-    }
+    .edu-item { display: flex; gap: 1.5rem; padding-bottom: 2rem; position: relative; }
     .edu-item:last-child { padding-bottom: 0; }
     .edu-dot {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       flex-shrink: 0;
       border-radius: 50%;
       background: var(--surface);
       border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: var(--accent);
       position: relative;
       z-index: 1;
@@ -503,13 +520,7 @@
       transition: box-shadow var(--transition);
     }
     .edu-body:hover { box-shadow: var(--shadow-md); }
-    .edu-degree {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-    }
+    .edu-degree { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
     .edu-school { font-size: 0.9rem; color: var(--accent); font-weight: 700; margin-bottom: 0.2rem; }
     .edu-meta { font-size: 0.82rem; color: var(--muted); }
     .edu-gpa {
@@ -527,11 +538,7 @@
     .edu-thesis { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
 
     /* ── Skills ──────────────────────────────────────────────────────── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
     .skills-category {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -598,13 +605,7 @@
       margin: 0 auto;
       box-shadow: var(--shadow-md);
     }
-    .contact-title {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
+    .contact-title { font-family: 'Crimson Pro', serif; font-size: 1.75rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
     .contact-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; max-width: 420px; margin-left: auto; margin-right: auto; }
     .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
     .contact-link {
@@ -626,26 +627,19 @@
     .contact-link-primary:hover { background: var(--accent-hover); color: #fff; }
 
     /* ── Footer ──────────────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.75rem 0;
-      text-align: center;
-    }
+    footer { border-top: 1px solid var(--border); padding: 1.75rem 0; text-align: center; }
     .footer-text { font-size: 0.82rem; color: var(--muted); }
 
     /* ── Back to top ─────────────────────────────────────────────────── */
     .back-top {
       position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
+      bottom: 1.5rem; right: 1.5rem;
       width: 40px; height: 40px;
       border-radius: 50%;
       background: var(--accent);
       color: #fff;
       border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
@@ -656,6 +650,91 @@
     .back-top.visible { opacity: 1; pointer-events: auto; }
     .back-top:hover { transform: translateY(-3px); }
     .back-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    /* ── Modal ───────────────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 620px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.25s ease;
+      box-shadow: var(--shadow-lg);
+    }
+    .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+    .modal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 32px; height: 32px;
+      border: none;
+      background: var(--surface-2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .modal-close:hover { background: var(--border); color: var(--text); }
+    .modal-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .modal-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius);
+      background: var(--accent-bg);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .modal-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+      padding-right: 2rem;
+    }
+    .modal-section { margin-bottom: 1.25rem; }
+    .modal-section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .modal-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .modal-impact {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-bg);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .modal-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
   </style>
 </head>
 <body>
@@ -664,17 +743,16 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <span class="nav-brand">M. Shohrab</span>
   <div class="nav-links">
-    <a href="#research" class="nav-link">Research</a>
-    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#news"         class="nav-link">News</a>
+    <a href="#research"     class="nav-link">Research</a>
+    <a href="#projects"     class="nav-link">Projects</a>
     <a href="#publications" class="nav-link">Papers</a>
-    <a href="#education" class="nav-link nav-link-extra">Education</a>
-    <a href="#contact" class="nav-link nav-link-extra">Contact</a>
+    <a href="#education"    class="nav-link nav-link-extra">Education</a>
+    <a href="#contact"      class="nav-link nav-link-extra">Contact</a>
   </div>
   <div class="nav-sep" aria-hidden="true"></div>
   <button class="nav-theme-btn" id="themeToggle" aria-label="Toggle dark mode">
-    <!-- Sun icon -->
     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-    <!-- Moon icon -->
     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
 </nav>
@@ -685,8 +763,10 @@
   <section class="hero" id="hero" aria-label="Introduction">
     <div class="container">
       <div class="hero-inner">
-        <div class="hero-avatar" aria-hidden="true">
-          <span class="hero-avatar-initials">MS</span>
+        <div class="hero-avatar" aria-label="Photo of Muntasir Shohrab">
+          <img src="photo.jpg" alt="Muntasir Shohrab"
+               onerror="this.style.display='none'; document.getElementById('avatarInitials').style.display='flex';" />
+          <span id="avatarInitials" class="hero-avatar-initials" style="display:none">MS</span>
         </div>
         <div class="hero-content">
           <p class="hero-label reveal">PhD Researcher · NJIT</p>
@@ -699,6 +779,10 @@
             <a href="mailto:ms3235@njit.edu" class="hero-link hero-link-primary">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               Email Me
+            </a>
+            <a href="cv.pdf" download class="hero-link hero-link-cv">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              Download CV
             </a>
             <a href="https://scholar.google.com/citations?hl=en&user=fkJppiwAAAAJ" target="_blank" rel="noopener" class="hero-link hero-link-secondary">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8M8 7h8M8 15h5"/></svg>
@@ -720,68 +804,148 @@
 
   <hr class="divider" />
 
+  <!-- ── News ──────────────────────────────────────────────────────────── -->
+  <section id="news" aria-label="News and updates">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Latest</p>
+        <h2 class="section-title">News &amp; Updates</h2>
+        <p class="section-desc">Recent research activity, conference presentations, and project milestones.</p>
+      </div>
+      <div class="news-list">
+
+        <div class="news-item reveal reveal-delay-1">
+          <span class="news-date">Oct 2025</span>
+          <span class="news-dot" aria-hidden="true"></span>
+          <div class="news-body">
+            <p class="news-title">Presented at FMA 2025 Annual Meeting</p>
+            <p class="news-desc">Presented "The Voice of Risk: Managerial Speech Cues and Corporate Misconduct" in Vancouver, Canada. Paper is under Revise &amp; Resubmit at <em>Journal of Business Ethics</em>.</p>
+          </div>
+          <span class="news-badge badge-conference">Conference</span>
+        </div>
+
+        <div class="news-item reveal reveal-delay-2">
+          <span class="news-date">Nov 2025</span>
+          <span class="news-dot" aria-hidden="true"></span>
+          <div class="news-body">
+            <p class="news-title">Presented at SFA 2025 Annual Meeting</p>
+            <p class="news-desc">Presented "Man vs. Machine: Unlocking the Power of LLM for Financial Risk Prediction Amid Climate Change" in Orlando, Florida.</p>
+          </div>
+          <span class="news-badge badge-conference">Conference</span>
+        </div>
+
+        <div class="news-item reveal reveal-delay-3">
+          <span class="news-date">2025</span>
+          <span class="news-dot" aria-hidden="true"></span>
+          <div class="news-body">
+            <p class="news-title">ESG Visual Intelligence Pipeline — Large-Scale VLM Study</p>
+            <p class="news-desc">Completed classification of 14,000+ Fortune 500 earnings presentation slides (2010–2022) using Gemini 2.5 Flash and GPT-4.1-mini; running Fama-French event study analysis.</p>
+          </div>
+          <span class="news-badge badge-project">Project</span>
+        </div>
+
+        <div class="news-item reveal reveal-delay-4">
+          <span class="news-date">Mar 2022</span>
+          <span class="news-dot" aria-hidden="true"></span>
+          <div class="news-body">
+            <p class="news-title">Journal Publication — IAENG Applied Mathematics</p>
+            <p class="news-desc">Published "Determination of Pi Terms by the Method of Repeating Variables and Rayleigh Method" in the IAENG International Journal of Applied Mathematics.</p>
+          </div>
+          <span class="news-badge badge-paper">Journal</span>
+        </div>
+
+        <div class="news-item reveal reveal-delay-1">
+          <span class="news-date">Sep 2022</span>
+          <span class="news-dot" aria-hidden="true"></span>
+          <div class="news-body">
+            <p class="news-title">Started PhD at NJIT</p>
+            <p class="news-desc">Joined the Business Data Science PhD program at New Jersey Institute of Technology under Dr. Dantong Yu. Currently maintaining a 3.96 GPA.</p>
+          </div>
+          <span class="news-badge badge-award">Milestone</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- ── Research ───────────────────────────────────────────────────────── -->
   <section id="research" aria-label="Research projects">
     <div class="container-wide">
       <div class="section-header reveal">
         <p class="section-label">Research</p>
         <h2 class="section-title">Ongoing &amp; Completed Work</h2>
-        <p class="section-desc">Applying machine learning and LLMs to financial prediction, corporate risk, and scientific domains.</p>
+        <p class="section-desc">Click any card for details. Applying machine learning and LLMs to financial prediction, corporate risk, and scientific domains.</p>
       </div>
       <div class="research-grid">
 
-        <article class="research-card reveal reveal-delay-1">
+        <article class="research-card reveal reveal-delay-1" role="button" tabindex="0"
+          data-modal="modal-fintabllm" aria-haspopup="dialog">
+          <span class="research-card-hint" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Details
+          </span>
           <div class="research-card-top">
             <div class="research-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
             </div>
             <h3 class="research-card-name">FinTabLLM — M&amp;A Withdrawal Prediction</h3>
           </div>
-          <p class="research-card-desc">Built a framework to serialize structured tabular M&amp;A data to natural language and fine-tuned LLaMA-3 with parameter-efficient methods (PEFT/LoRA) on multi-GPU infrastructure to predict merger withdrawals.</p>
+          <p class="research-card-desc">Fine-tuned LLaMA-3 with PEFT/LoRA on serialized M&amp;A tabular data to predict merger withdrawals on multi-GPU infrastructure.</p>
           <div class="research-card-impact">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             +2% ROC AUC vs. tree-based baselines
           </div>
-          <div class="tags">
-            <span class="tag">LLaMA-3</span><span class="tag">PEFT/LoRA</span><span class="tag">PyTorch</span><span class="tag">Multi-GPU</span><span class="tag">Financial ML</span>
-          </div>
+          <div class="tags"><span class="tag">LLaMA-3</span><span class="tag">PEFT/LoRA</span><span class="tag">PyTorch</span><span class="tag">Multi-GPU</span><span class="tag">Financial ML</span></div>
         </article>
 
-        <article class="research-card reveal reveal-delay-2">
+        <article class="research-card reveal reveal-delay-2" role="button" tabindex="0"
+          data-modal="modal-bond" aria-haspopup="dialog">
+          <span class="research-card-hint" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Details
+          </span>
           <div class="research-card-top">
             <div class="research-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <h3 class="research-card-name">Macroeconomic ML for Corporate Bond Risk</h3>
           </div>
-          <p class="research-card-desc">Modeled interactions between bond characteristics and macroeconomic indicators using MLPs and linear regression to predict corporate bond excess returns from a sparse curated feature set.</p>
+          <p class="research-card-desc">MLPs and linear regression to model bond characteristics and macroeconomic indicators for predicting corporate bond excess returns.</p>
           <div class="research-card-impact">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             +3% out-of-sample R²
           </div>
-          <div class="tags">
-            <span class="tag">MLP</span><span class="tag">Linear Regression</span><span class="tag">Feature Engineering</span><span class="tag">Time Series</span>
-          </div>
+          <div class="tags"><span class="tag">MLP</span><span class="tag">Linear Regression</span><span class="tag">Feature Engineering</span><span class="tag">Time Series</span></div>
         </article>
 
-        <article class="research-card reveal reveal-delay-3">
+        <article class="research-card reveal reveal-delay-3" role="button" tabindex="0"
+          data-modal="modal-vor" aria-haspopup="dialog">
+          <span class="research-card-hint" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Details
+          </span>
           <div class="research-card-top">
             <div class="research-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="23"/><line x1="8" x2="16" y1="23" y2="23"/></svg>
             </div>
             <h3 class="research-card-name">The Voice of Risk</h3>
           </div>
-          <p class="research-card-desc">Developed verbal and acoustic ML features (nonanswers, disfluency) from CEO earnings calls using Wav2Vec2 and multinomial inverse regression to improve corporate misconduct prediction.</p>
+          <p class="research-card-desc">Verbal and acoustic ML features from CEO earnings calls (Wav2Vec2 + multinomial inverse regression) to improve corporate misconduct prediction.</p>
           <div class="research-card-impact">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             +2.5% accuracy in misconduct prediction
           </div>
-          <div class="tags">
-            <span class="tag">Wav2Vec2</span><span class="tag">NLP</span><span class="tag">Speech Processing</span><span class="tag">Causal Inference</span>
-          </div>
+          <div class="tags"><span class="tag">Wav2Vec2</span><span class="tag">NLP</span><span class="tag">Speech Processing</span><span class="tag">Causal Inference</span></div>
         </article>
 
-        <article class="research-card reveal reveal-delay-4">
+        <article class="research-card reveal reveal-delay-4" role="button" tabindex="0"
+          data-modal="modal-eps" aria-haspopup="dialog">
+          <span class="research-card-hint" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Details
+          </span>
           <div class="research-card-top">
             <div class="research-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -793,12 +957,15 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             +5% R² over time-series baseline
           </div>
-          <div class="tags">
-            <span class="tag">RAG</span><span class="tag">Transformers</span><span class="tag">Multimodal</span><span class="tag">Time Series</span><span class="tag">NLP</span>
-          </div>
+          <div class="tags"><span class="tag">RAG</span><span class="tag">Transformers</span><span class="tag">Multimodal</span><span class="tag">Time Series</span><span class="tag">NLP</span></div>
         </article>
 
-        <article class="research-card reveal reveal-delay-1">
+        <article class="research-card reveal reveal-delay-1" role="button" tabindex="0"
+          data-modal="modal-rhic" aria-haspopup="dialog">
+          <span class="research-card-hint" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Details
+          </span>
           <div class="research-card-top">
             <div class="research-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
@@ -810,9 +977,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             LLMs applied to physics event classification
           </div>
-          <div class="tags">
-            <span class="tag">LLMs</span><span class="tag">Fine-tuning</span><span class="tag">Physics Simulation</span><span class="tag">NLP</span>
-          </div>
+          <div class="tags"><span class="tag">LLMs</span><span class="tag">Fine-tuning</span><span class="tag">Physics Simulation</span><span class="tag">NLP</span></div>
         </article>
 
       </div>
@@ -827,85 +992,85 @@
       <div class="section-header reveal">
         <p class="section-label">Projects</p>
         <h2 class="section-title">Engineering Work</h2>
-        <p class="section-desc">End-to-end ML systems and applied AI pipelines.</p>
+        <p class="section-desc">Click any card to view the code on GitHub.</p>
       </div>
       <div class="projects-grid">
 
-        <article class="project-card reveal reveal-delay-1">
-          <div class="project-card-top">
-            <h3 class="project-card-name">ESG Visual Intelligence Pipeline</h3>
-            <span class="project-status status-inprogress">In Progress</span>
+        <a href="https://github.com/MuntasirTiash/PPT-Analysis" target="_blank" rel="noopener"
+           class="project-card-link reveal reveal-delay-1" aria-label="ESG Visual Intelligence Pipeline — View on GitHub">
+          <div class="project-card">
+            <div class="project-card-top">
+              <h3 class="project-card-name">ESG Visual Intelligence Pipeline</h3>
+              <span class="project-status status-inprogress">In Progress</span>
+            </div>
+            <p class="project-card-desc">VLM-powered pipeline classifying ESG content across 500+ Fortune 500 earnings presentations (14,000+ slides). Gemini 2.5 Flash, GPT-4.1-mini, Qwen2-VL-2B fine-tuned with PEFT/LoRA; Fama-French event study analysis.</p>
+            <p class="project-card-impact">End-to-end VLM pipeline from raw PDFs to financial econometrics at Fortune 500 scale.</p>
+            <div class="tags"><span class="tag">VLMs</span><span class="tag">Gemini 2.5</span><span class="tag">Qwen2-VL</span><span class="tag">PEFT/LoRA</span><span class="tag">Event Study</span></div>
+            <div class="project-card-footer">
+              <span class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                View on GitHub
+              </span>
+            </div>
           </div>
-          <p class="project-card-desc">VLM-powered pipeline to classify ESG/sustainability content across 500+ Fortune 500 earnings presentations (14,000+ slides, 2010–2022). Uses Gemini 2.5 Flash and GPT-4.1-mini; fine-tuned Qwen2-VL-2B with PEFT/LoRA; event study analysis with Fama-French 3-factor model.</p>
-          <p class="project-card-impact">End-to-end VLM pipeline from raw PDFs to financial econometrics at Fortune 500 scale.</p>
-          <div class="tags">
-            <span class="tag">VLMs</span><span class="tag">Gemini 2.5</span><span class="tag">Qwen2-VL</span><span class="tag">PEFT/LoRA</span><span class="tag">Event Study</span><span class="tag">Fama-French</span>
-          </div>
-          <div class="project-card-footer">
-            <div class="tags"></div>
-            <a href="https://github.com/MuntasirTiash/PPT-Analysis" target="_blank" rel="noopener" class="github-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </article>
+        </a>
 
-        <article class="project-card reveal reveal-delay-2">
-          <div class="project-card-top">
-            <h3 class="project-card-name">Job Search Automation Agent</h3>
-            <span class="project-status status-inprogress">In Progress</span>
+        <a href="https://github.com/MuntasirTiash/job_search" target="_blank" rel="noopener"
+           class="project-card-link reveal reveal-delay-2" aria-label="Job Search Automation Agent — View on GitHub">
+          <div class="project-card">
+            <div class="project-card-top">
+              <h3 class="project-card-name">Job Search Automation Agent</h3>
+              <span class="project-status status-inprogress">In Progress</span>
+            </div>
+            <p class="project-card-desc">Multi-agent CLI with scraper agents (LinkedIn, RemoteOK), LLM-based job scoring, Playwright browser automation for ATS form filling, Gmail OAuth, and a Notion backend with human-in-the-loop approval.</p>
+            <p class="project-card-impact">End-to-end automation from job discovery to application submission.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">Claude API</span><span class="tag">Multi-Agent</span><span class="tag">OAuth2</span></div>
+            <div class="project-card-footer">
+              <span class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                View on GitHub
+              </span>
+            </div>
           </div>
-          <p class="project-card-desc">Multi-agent CLI with scraper agents (LinkedIn, RemoteOK), LLM-based job scoring, browser automation (Playwright) for ATS form filling, Gmail OAuth integration for email classification, and a Notion database backend with human-in-the-loop approval.</p>
-          <p class="project-card-impact">End-to-end automation from job discovery to application submission.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">Claude API</span><span class="tag">Multi-Agent</span><span class="tag">OAuth2</span>
-          </div>
-          <div class="project-card-footer">
-            <div class="tags"></div>
-            <a href="https://github.com/MuntasirTiash/job_search" target="_blank" rel="noopener" class="github-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </article>
+        </a>
 
-        <article class="project-card reveal reveal-delay-3">
-          <div class="project-card-top">
-            <h3 class="project-card-name">NLP Mortality Prediction (NJACTS)</h3>
-            <span class="project-status status-complete">Complete</span>
+        <a href="https://github.com/MuntasirTiash/NJACTS" target="_blank" rel="noopener"
+           class="project-card-link reveal reveal-delay-3" aria-label="NLP Mortality Prediction — View on GitHub">
+          <div class="project-card">
+            <div class="project-card-top">
+              <h3 class="project-card-name">NLP Mortality Prediction (NJACTS)</h3>
+              <span class="project-status status-complete">Complete</span>
+            </div>
+            <p class="project-card-desc">Two-stage NLP pipeline: a configurable NoteTemplate engine serializes tabular EHR data into clinical notes, then fine-tunes GPT-2 for binary mortality prediction with class-weighted loss.</p>
+            <p class="project-card-impact">Table-to-text generation, transformer fine-tuning, and clinical NLP on real EHR data.</p>
+            <div class="tags"><span class="tag">GPT-2</span><span class="tag">Hugging Face</span><span class="tag">PyTorch</span><span class="tag">Table-to-Text</span><span class="tag">Clinical NLP</span></div>
+            <div class="project-card-footer">
+              <span class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                View on GitHub
+              </span>
+            </div>
           </div>
-          <p class="project-card-desc">Two-stage NLP pipeline: a configurable NoteTemplate engine serializes tabular EHR data into clinical notes, then fine-tunes GPT-2 for binary mortality prediction with class-weighted loss to handle label imbalance.</p>
-          <p class="project-card-impact">Table-to-text generation, transformer fine-tuning, and clinical NLP on real EHR data.</p>
-          <div class="tags">
-            <span class="tag">GPT-2</span><span class="tag">Hugging Face</span><span class="tag">PyTorch</span><span class="tag">Table-to-Text</span><span class="tag">Clinical NLP</span>
-          </div>
-          <div class="project-card-footer">
-            <div class="tags"></div>
-            <a href="https://github.com/MuntasirTiash/NJACTS" target="_blank" rel="noopener" class="github-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </article>
+        </a>
 
-        <article class="project-card reveal reveal-delay-4">
-          <div class="project-card-top">
-            <h3 class="project-card-name">Reverse Visual Search (MS COCO)</h3>
-            <span class="project-status status-complete">Complete</span>
+        <a href="https://github.com/MuntasirTiash/Reverse-Visual-Search-On-MiniCocoDataset" target="_blank" rel="noopener"
+           class="project-card-link reveal reveal-delay-4" aria-label="Reverse Visual Search — View on GitHub">
+          <div class="project-card">
+            <div class="project-card-top">
+              <h3 class="project-card-name">Reverse Visual Search (MS COCO)</h3>
+              <span class="project-status status-complete">Complete</span>
+            </div>
+            <p class="project-card-desc">Faster R-CNN (ResNet-50 FPN) detects and crops persons with &gt;95% confidence, extracts 2048-dim pool-layer features, applies PCA, retrieves top-10 matches via cosine similarity.</p>
+            <p class="project-card-impact">End-to-end CV pipeline: detection, feature extraction, dimensionality reduction, and similarity search.</p>
+            <div class="tags"><span class="tag">Faster R-CNN</span><span class="tag">ResNet-50</span><span class="tag">PCA</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span></div>
+            <div class="project-card-footer">
+              <span class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                View on GitHub
+              </span>
+            </div>
           </div>
-          <p class="project-card-desc">Reverse image search over MS COCO mini dataset: Faster R-CNN (ResNet-50 FPN) detects and crops persons with &gt;95% confidence, extracts 2048-dim pool-layer features, applies PCA, then retrieves top-10 matches via cosine similarity.</p>
-          <p class="project-card-impact">End-to-end CV pipeline: detection, feature extraction, dimensionality reduction, and similarity search.</p>
-          <div class="tags">
-            <span class="tag">Faster R-CNN</span><span class="tag">ResNet-50</span><span class="tag">PCA</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span>
-          </div>
-          <div class="project-card-footer">
-            <div class="tags"></div>
-            <a href="https://github.com/MuntasirTiash/Reverse-Visual-Search-On-MiniCocoDataset" target="_blank" rel="noopener" class="github-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </article>
+        </a>
 
       </div>
     </div>
@@ -1029,7 +1194,6 @@
 
       </div>
 
-      <!-- Awards -->
       <div style="margin-top: 3rem;">
         <div class="section-header reveal">
           <p class="section-label">Honors &amp; Awards</p>
@@ -1075,16 +1239,11 @@
             ML &amp; AI Areas
           </p>
           <div class="skills-tags">
-            <span class="skill-tag">Large Language Models</span>
-            <span class="skill-tag">NLP</span>
-            <span class="skill-tag">Financial ML</span>
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">Speech Processing</span>
-            <span class="skill-tag">Multimodal Learning</span>
-            <span class="skill-tag">RAG</span>
-            <span class="skill-tag">Causal Inference</span>
-            <span class="skill-tag">Time Series</span>
-            <span class="skill-tag">Risk Modeling</span>
+            <span class="skill-tag">Large Language Models</span><span class="skill-tag">NLP</span>
+            <span class="skill-tag">Financial ML</span><span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Speech Processing</span><span class="skill-tag">Multimodal Learning</span>
+            <span class="skill-tag">RAG</span><span class="skill-tag">Causal Inference</span>
+            <span class="skill-tag">Time Series</span><span class="skill-tag">Risk Modeling</span>
             <span class="skill-tag">SHAP / Explainability</span>
           </div>
         </div>
@@ -1095,16 +1254,11 @@
             Frameworks &amp; Libraries
           </p>
           <div class="skills-tags">
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Hugging Face</span>
-            <span class="skill-tag">PEFT/LoRA</span>
-            <span class="skill-tag">CUDA</span>
-            <span class="skill-tag">scikit-learn</span>
-            <span class="skill-tag">XGBoost</span>
-            <span class="skill-tag">LLaMA-3</span>
-            <span class="skill-tag">Wav2Vec2</span>
-            <span class="skill-tag">BERT</span>
-            <span class="skill-tag">DeepLabv3+</span>
+            <span class="skill-tag">PyTorch</span><span class="skill-tag">Hugging Face</span>
+            <span class="skill-tag">PEFT/LoRA</span><span class="skill-tag">CUDA</span>
+            <span class="skill-tag">scikit-learn</span><span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">LLaMA-3</span><span class="skill-tag">Wav2Vec2</span>
+            <span class="skill-tag">BERT</span><span class="skill-tag">DeepLabv3+</span>
           </div>
         </div>
 
@@ -1114,16 +1268,11 @@
             Engineering &amp; Tools
           </p>
           <div class="skills-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Linux</span>
-            <span class="skill-tag">SLURM / HPC</span>
-            <span class="skill-tag">Multi-GPU Training</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">SQLite</span>
-            <span class="skill-tag">LaTeX</span>
-            <span class="skill-tag">Playwright</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
+            <span class="skill-tag">Git</span><span class="skill-tag">Linux</span>
+            <span class="skill-tag">SLURM / HPC</span><span class="skill-tag">Multi-GPU Training</span>
+            <span class="skill-tag">REST APIs</span><span class="skill-tag">SQLite</span>
+            <span class="skill-tag">LaTeX</span><span class="skill-tag">Playwright</span>
           </div>
         </div>
 
@@ -1133,12 +1282,9 @@
             Software Practices
           </p>
           <div class="skills-tags">
-            <span class="skill-tag">Modular Architecture</span>
-            <span class="skill-tag">Agile</span>
-            <span class="skill-tag">TDD / pytest</span>
-            <span class="skill-tag">Code Review</span>
-            <span class="skill-tag">CLI Development</span>
-            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Modular Architecture</span><span class="skill-tag">Agile</span>
+            <span class="skill-tag">TDD / pytest</span><span class="skill-tag">Code Review</span>
+            <span class="skill-tag">CLI Development</span><span class="skill-tag">Data Structures</span>
           </div>
         </div>
 
@@ -1158,6 +1304,10 @@
           <a href="mailto:ms3235@njit.edu" class="contact-link contact-link-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             ms3235@njit.edu
+          </a>
+          <a href="cv.pdf" download class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Download CV
           </a>
           <a href="https://scholar.google.com/citations?hl=en&user=fkJppiwAAAAJ" target="_blank" rel="noopener" class="contact-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8M8 7h8M8 15h5"/></svg>
@@ -1188,8 +1338,149 @@
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
 </button>
 
+<!-- ── Research Modals ─────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-fintabllm" role="dialog" aria-modal="true" aria-labelledby="m1-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+    </div>
+    <h2 class="modal-title" id="m1-title">FinTabLLM — M&amp;A Withdrawal Prediction</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">Overview</p>
+      <p class="modal-text">Built a framework to serialize structured tabular M&amp;A data into natural language descriptions, enabling large language models to reason over financial deal characteristics. The pipeline converts each M&amp;A record — deal size, target/acquirer financials, deal structure — into a coherent text prompt.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-section">
+      <p class="modal-section-label">Method</p>
+      <p class="modal-text">Fine-tuned LLaMA-3 using parameter-efficient fine-tuning (PEFT/LoRA) on multi-GPU infrastructure (SLURM/HPC). LoRA adapters were applied to attention layers to enable efficient adaptation with minimal additional parameters. Binary classification: whether a merger deal will be withdrawn.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-impact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      Improved ROC AUC by 2% compared to tree-based baselines (XGBoost, Random Forest)
+    </div>
+    <hr class="modal-divider" />
+    <div class="tags"><span class="tag">LLaMA-3</span><span class="tag">PEFT/LoRA</span><span class="tag">PyTorch</span><span class="tag">Multi-GPU</span><span class="tag">NLP</span><span class="tag">Financial ML</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-bond" role="dialog" aria-modal="true" aria-labelledby="m2-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    </div>
+    <h2 class="modal-title" id="m2-title">Macroeconomic ML for Corporate Bond Risk</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">Overview</p>
+      <p class="modal-text">Investigated how macroeconomic conditions interact with bond-level characteristics to predict corporate bond excess returns. Built a modeling pipeline that integrates both macro-level signals (inflation, yield curve, credit spreads) and firm-level bond features.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-section">
+      <p class="modal-section-label">Method</p>
+      <p class="modal-text">Used MLPs alongside linear regression as baselines. Careful feature engineering produced a sparse, curated feature set that avoided overfitting. Out-of-sample evaluation on held-out time periods validated the generalization of the approach.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-impact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      Out-of-sample R² increased by 3% using the sparse curated feature set
+    </div>
+    <hr class="modal-divider" />
+    <div class="tags"><span class="tag">MLP</span><span class="tag">Linear Regression</span><span class="tag">Feature Engineering</span><span class="tag">Time Series</span><span class="tag">Financial ML</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-vor" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+    </div>
+    <h2 class="modal-title" id="m3-title">The Voice of Risk: Managerial Speech Cues and Corporate Misconduct</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">Overview</p>
+      <p class="modal-text">Investigated whether acoustic and verbal cues in CEO earnings call audio can predict corporate misconduct before it is publicly disclosed. Extracted features capturing linguistic hedging, disfluency rates, nonanswer frequency, and speech prosody.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-section">
+      <p class="modal-section-label">Method</p>
+      <p class="modal-text">Used Wav2Vec2 for acoustic feature extraction from raw audio. Combined with textual NLP features. Applied multinomial inverse regression (MNIR) for high-dimensional text features and causal inference techniques to control for confounders. Presented at FMA 2025; under Revise &amp; Resubmit at <em>Journal of Business Ethics</em>.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-impact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      +2.5% accuracy improvement in corporate misconduct prediction
+    </div>
+    <hr class="modal-divider" />
+    <div class="tags"><span class="tag">Wav2Vec2</span><span class="tag">NLP</span><span class="tag">Speech Processing</span><span class="tag">Causal Inference</span><span class="tag">MNIR</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-eps" role="dialog" aria-modal="true" aria-labelledby="m4-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </div>
+    <h2 class="modal-title" id="m4-title">EPS Prediction with Multimodal Data</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">Overview</p>
+      <p class="modal-text">Predicted next-quarter Earnings Per Share (EPS) by fusing two modalities: structured time-series financial data and unstructured 10-Q SEC filings. The goal was to test whether forward-looking language in filings carries predictive signal beyond historical numbers.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-section">
+      <p class="modal-section-label">Method</p>
+      <p class="modal-text">Tokenized time-series using temporal embeddings. Applied Retrieval-Augmented Generation (RAG) to extract relevant forward-looking statements from 10-Q filings. A fusion transformer layer combined both representations for final EPS regression. Evaluated against a pure time-series baseline.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-impact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      +5% R² improvement over time-series-only baseline
+    </div>
+    <hr class="modal-divider" />
+    <div class="tags"><span class="tag">RAG</span><span class="tag">Transformers</span><span class="tag">Multimodal Learning</span><span class="tag">Time Series</span><span class="tag">NLP</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-rhic" role="dialog" aria-modal="true" aria-labelledby="m5-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+    </div>
+    <h2 class="modal-title" id="m5-title">Physics-Informed LLMs — RHIC Trigger Prediction</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">Overview</p>
+      <p class="modal-text">An interdisciplinary project applying LLMs to high-energy nuclear physics. The Relativistic Heavy Ion Collider (RHIC) generates massive event streams; a fast trigger system must decide in microseconds which events to save. This work explored whether LLMs could serve as a flexible, trainable classifier for that task.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-section">
+      <p class="modal-section-label">Method</p>
+      <p class="modal-text">Converted particle collision simulation data (detector hits, track momenta, energy deposits) into structured textual prompts. Fine-tuned pre-trained LLMs on labeled trigger/no-trigger classification tasks. Demonstrated that natural language interfaces to physics simulation data are feasible and competitive.</p>
+    </div>
+    <hr class="modal-divider" />
+    <div class="modal-impact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      Demonstrated LLM applicability to real-world physics event classification
+    </div>
+    <hr class="modal-divider" />
+    <div class="tags"><span class="tag">LLMs</span><span class="tag">Fine-tuning</span><span class="tag">Physics Simulation</span><span class="tag">NLP</span><span class="tag">RHIC</span></div>
+  </div>
+</div>
+
 <script>
-  /* Dark mode toggle */
+  /* ── Dark mode ──────────────────────────────────────────────────────── */
   const html = document.documentElement;
   const themeBtn = document.getElementById('themeToggle');
   const stored = localStorage.getItem('theme');
@@ -1202,24 +1493,38 @@
     localStorage.setItem('theme', next);
   });
 
-  /* Scroll reveal (Intersection Observer) */
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+  /* ── Avatar fallback ────────────────────────────────────────────────── */
+  const avatarImg = document.querySelector('.hero-avatar img');
+  const avatarInitials = document.getElementById('avatarInitials');
+  if (avatarImg) {
+    avatarImg.addEventListener('error', () => {
+      avatarImg.style.display = 'none';
+      avatarInitials.style.display = 'flex';
+    });
+    if (!avatarImg.complete || avatarImg.naturalWidth === 0) {
+      avatarImg.style.display = 'none';
+      avatarInitials.style.display = 'flex';
+    }
+  }
 
-  /* Back to top */
+  /* ── Scroll reveal ──────────────────────────────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  /* ── Back to top ────────────────────────────────────────────────────── */
   const backTop = document.getElementById('backTop');
   window.addEventListener('scroll', () => {
     backTop.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
   backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* Active nav link highlight */
+  /* ── Active nav highlight ───────────────────────────────────────────── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
-  const sectionObserver = new IntersectionObserver((entries) => {
+  const sectionObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         navLinks.forEach(l => l.style.removeProperty('color'));
@@ -1228,7 +1533,36 @@
       }
     });
   }, { threshold: 0.4 });
-  sections.forEach(s => sectionObserver.observe(s));
+  sections.forEach(s => sectionObs.observe(s));
+
+  /* ── Research modals ────────────────────────────────────────────────── */
+  function openModal(id) {
+    const overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    overlay.querySelector('.modal-close').focus();
+  }
+  function closeModal(overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.research-card[data-modal]').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.modal));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.modal); } });
+  });
+
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.querySelector('.modal-close').addEventListener('click', () => closeModal(overlay));
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(overlay); });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(o => closeModal(o));
+    }
+  });
 </script>
 
 </body>
